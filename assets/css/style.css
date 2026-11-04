@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTLYgFE_.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+
+
+/* reset della pagina totale */
+
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2b2b2b;
+  background-color: #f4f1ec;
+  
+}
+
+h2 {
+  color: hsl(220, 60%, 25%);
+  font-size: clamp(1.5rem,2rem,2.5rem);
+}
+/* header */
+
+header{
+  display: flex;
+  height: 35dvh;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../img/header-bg.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid hsl(45,90%,60%);
+  text-shadow: 0 0px 0px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+}
+
+
+header h1{
+  font-size: clamp(2rem,1.5rem,3rem);
+  padding-top: 0.5rem;
+}
+
+header p{
+  font-style: italic;
+  color: #f0e7c8;
+}
+
+header ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  justify-content: space-evenly;
+  row-gap:80px;
+  max-width: 500px;
+  text-align: center;
+  
+}
+
+header ul li{
+  width: 30%;
+  flex-grow: 1;
+}
+
+header ul li a{
+  color: hsl(45, 90%, 50%);
+  font-weight: 600;
+  text-decoration: none;
+}
