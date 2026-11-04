@@ -27,6 +27,7 @@ body {
   line-height: 1.5;
   color: #2b2b2b;
   background-color: #f4f1ec;
+  /* scroll-padding-top: 45dvh; */
   
 }
 
@@ -46,7 +47,7 @@ header{
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: 2px solid hsl(45,90%,60%);
-  text-shadow: 0 0px 0px rgba(0,0,0,0.4);
+  /* text-shadow: 0 0px 0px rgba(0,0,0,0.4); */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -57,19 +58,22 @@ header{
 header h1{
   font-size: clamp(2rem,1.5rem,3rem);
   padding-top: 0.5rem;
+  font-weight: 600;
+  text-shadow: 0 0px 0px rgba(0,0,0,0.4);
+  font-style: italic;
+  color: #fff;
 }
 
 header p{
   font-style: italic;
   color: #f0e7c8;
+  text-shadow: 0 1px 0px rgba(0,0,0,0.5);
 }
 
 header ul{
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  row-gap: 50px;
-  justify-content: space-evenly;
   row-gap:80px;
   max-width: 500px;
   text-align: center;
@@ -77,7 +81,7 @@ header ul{
 }
 
 header ul li{
-  width: 30%;
+  width: 26%;
   flex-grow: 1;
 }
 
@@ -85,4 +89,300 @@ header ul li a{
   color: hsl(45, 90%, 50%);
   font-weight: 600;
   text-decoration: none;
+  border-radius: 3px;
+}
+
+@media screen and (min-width:577px) {
+header{
+  height: 25dvh;
+}
+
+  header ul{
+    max-width: none;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  header ul li{
+    width: auto;
+    padding: 10px;
+    
+  }
+  
+}
+
+.container{
+  padding:1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* section */
+
+  .content-container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+section{
+  background-color: #fff;
+  border:1px solid #e6e0d3;
+  border-radius:5px;
+  padding: 1rem;
+   display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  
+}
+
+h2::before {
+  content: '\2756';
+  color: hsl(45, 90%, 50%);
+}
+
+section img{
+  border-radius:50%;
+  border:5px solid hsl(45, 90%, 50%);
+  height: auto;
+  width: 100%;
+}
+
+.img-container{
+  max-width: 30%;
+  align-self: center;
+  margin-right: 10px;
+}
+
+@media screen and (min-width:577px) {
+  .img-container{
+    align-self: auto;
+  }
+
+  .first-sect-container{
+    flex-direction: row;
+  }
+  
+  
+}
+
+#back-top{
+  display:inline-block;
+  text-decoration:none;
+  background-color:#1f3d7a;
+  color:white;
+  font-size:3rem;
+  width:60px;
+  height:60px;
+  position:fixed;
+  right: 30px;
+  top: 830px;
+  text-align:center;
+  border-radius:50%;
+  z-index: 2000;
+}
+
+
+.skill-container{
+  display: flex;
+  gap: 10px;
+  width: 80%;
+  flex-wrap: wrap;
+  padding: 10px;
+
+}
+
+.chips{
+  text-align: center;
+  border:none;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #1f3d7a;
+  /* flex-grow: 1; */
+  color: #fff;
+  font-weight: 600;
+}
+
+.skill-container
+.chips:first-child{
+  background-color: hsl(45, 90%, 50%);
+  color: #1f3d7a;
+}
+
+.content-container table{
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #e6e0d3;
+}
+
+.content-container table th{
+  background-color: #2b2b2b;
+  color: #e6e0d3;
+}
+
+.content-container table tbody{
+text-align: center;
+}
+
+/* progetti */
+
+#progetti .card{
+  position: relative;
+}
+
+#progetti .content-container .card-container .card:first-of-type h3::after {
+  content: '🆕';
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (min-width:577px) {
+  .card-container{
+  display: flex;
+  gap: 20px;
+  }
+  
+}
+/* 
+contatti */
+
+.contatti form select,
+.contatti form input,
+.contatti form textarea {
+  width: 100%;
+  border: 1px solid #d6cfbf;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 16px;
+}
+
+.contatti label {
+  font-size: 1rem;
+
+}
+
+.contatti form textarea {
+  height: 150px;
+}
+
+.contatti form #acceptTerms {
+  width: auto;
+  height: 10px;
+}
+
+.contatti button {
+  width: 100%;
+  font-size: 1em;
+  height: 35px;
+  background-color: hsl(220, 60%, 30%);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+@media screen and (min-width:577px) {
+  .contatti form select,
+  .contatti form input,
+  .contatti form textarea {
+    width: 60%;
+  }
+
+  .contatti button{
+    width: 30%;
+  }
+
+  .text-container>p:first-of-type::first-letter {
+    font-size: 3rem;
+    color: #1f3d7a;
+    font-weight: 800;
+    display: block;
+  }
+
+
+}
+/* finestra modale */
+
+.overlay{
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+
+}
+
+.modal{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 30rem;
+  max-height: 40rem;
+  overflow: scroll;
+
+}
+
+#closeModalBtn{
+  position: absolute;
+  top: 20px;
+  right:10px;
+  color: #fff;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 15dvh;
+  align-items: center;
+   background-color: hsl(220, 40%, 15%);
+}
+header nav ul li a,
+.icon-container a{
+  padding: 10px;
+}
+
+footer i{
+  margin-top:20px;
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  
+}
+
+/* effetti */
+
+
+#closeModalBtn:hover{
+  background-color: red;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+nav ul li a:hover {
+  color: hsl(220, 60%, 20%);
+  background-color: hsl(45, 90%, 60%);
+}
+.contatti .content-container button:hover,
+.contatti .content-container form button:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  background-color: hsl(220, 60%, 45%);
+
+}
+
+
+footer i:hover {
+  background-color: hsl(45, 90%, 60%);
+  color: hsl(220, 60%, 20%);
 }
