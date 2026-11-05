@@ -39,7 +39,7 @@ h2 {
 
 header{
   display: flex;
-  height: 35dvh;
+  height: 45dvh;
   flex-direction: column;
   align-items: center;
   background-image: url('../img/header-bg.webp');
@@ -51,6 +51,7 @@ header{
   position: sticky;
   top: 0;
   z-index: 1000;
+  
 
 }
 
@@ -74,14 +75,19 @@ header ul{
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  row-gap:80px;
-  max-width: 500px;
+  gap:20px;
+  max-width: 400px;
   text-align: center;
   
 }
 
+header ul:nth-child(4),
+header ul:nth-child(5){
+  flex-grow: 2;
+}
+
 header ul li{
-  width: 26%;
+  
   flex-grow: 1;
 }
 
@@ -90,23 +96,20 @@ header ul li a{
   font-weight: 600;
   text-decoration: none;
   border-radius: 3px;
+  padding:10px;
 }
 
 @media screen and (min-width:577px) {
 header{
-  height: 25dvh;
+  height: 55dvh;
 }
 
   header ul{
-    max-width: none;
+    max-width: 600px;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
-  header ul li{
-    width: auto;
-    padding: 10px;
-    
-  }
+
   
 }
 
@@ -155,6 +158,22 @@ section img{
   margin-right: 10px;
 }
 
+#back-top{
+  display:inline-block;
+  text-decoration:none;
+  background-color:#1f3d7a;
+  color:white;
+  font-size:3rem;
+  width:60px;
+  height:60px;
+  position:fixed;
+  right: 10px;
+  bottom: 30px;
+  text-align:center;
+  border-radius:50%;
+  z-index: 20000;
+}
+
 @media screen and (min-width:577px) {
   .img-container{
     align-self: auto;
@@ -167,21 +186,6 @@ section img{
   
 }
 
-#back-top{
-  display:inline-block;
-  text-decoration:none;
-  background-color:#1f3d7a;
-  color:white;
-  font-size:3rem;
-  width:60px;
-  height:60px;
-  position:fixed;
-  right: 30px;
-  top: 830px;
-  text-align:center;
-  border-radius:50%;
-  z-index: 2000;
-}
 
 
 .skill-container{
@@ -259,6 +263,7 @@ contatti */
   font-size: 16px;
 }
 
+
 .contatti label {
   font-size: 1rem;
 
@@ -316,7 +321,8 @@ contatti */
 
 .modal{
   position: absolute;
-  top: 50%;
+  width: 100%;
+  top: 70%;
   left:50%;
   transform: translate(-50%,-50%);
   background-color: #fff;
@@ -349,10 +355,10 @@ footer {
   align-items: center;
    background-color: hsl(220, 40%, 15%);
 }
-header nav ul li a,
+/* header nav ul li a,
 .icon-container a{
   padding: 10px;
-}
+} */
 
 footer i{
   margin-top:20px;
