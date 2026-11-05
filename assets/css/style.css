@@ -28,16 +28,17 @@ body {
   color: #2b2b2b;
   background-color: #f4f1ec;
   /* scroll-padding-top: 45dvh; */
-  
+
 }
 
 h2 {
   color: hsl(220, 60%, 25%);
-  font-size: clamp(1.5rem,2rem,2.5rem);
+  font-size: clamp(1.5rem, 2rem, 2.5rem);
 }
+
 /* header */
 
-header{
+header {
   display: flex;
   height: 45dvh;
   flex-direction: column;
@@ -46,75 +47,76 @@ header{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-bottom: 2px solid hsl(45,90%,60%);
-  /* text-shadow: 0 0px 0px rgba(0,0,0,0.4); */
+  border-bottom: 2px solid hsl(45, 90%, 60%);
+  height: 55dvh;
   position: sticky;
   top: 0;
   z-index: 1000;
-  
+
 
 }
 
 
-header h1{
-  font-size: clamp(2rem,1.5rem,3rem);
+header h1 {
+  font-size: clamp(2rem, 1.5rem, 3rem);
   padding-top: 0.5rem;
   font-weight: 600;
-  text-shadow: 0 0px 0px rgba(0,0,0,0.4);
+  text-shadow: 0 0px 0px rgba(0, 0, 0, 0.4);
   font-style: italic;
   color: #fff;
 }
 
-header p{
+header p {
   font-style: italic;
   color: #f0e7c8;
-  text-shadow: 0 1px 0px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 0px rgba(0, 0, 0, 0.5);
 }
 
-header ul{
+header ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  gap:20px;
+  gap: 20px;
   max-width: 400px;
   text-align: center;
-  
+
 }
 
 header ul:nth-child(4),
-header ul:nth-child(5){
+header ul:nth-child(5) {
   flex-grow: 2;
 }
 
-header ul li{
-  
+header ul li {
+
+  transition: transform ease-out 0.15s;
   flex-grow: 1;
 }
 
-header ul li a{
+header ul li a {
   color: hsl(45, 90%, 50%);
   font-weight: 600;
   text-decoration: none;
   border-radius: 3px;
-  padding:10px;
+  padding: 10px;
 }
 
 @media screen and (min-width:577px) {
-header{
-  height: 55dvh;
-}
+  header {
+    height: 45vh;
+  }
 
-  header ul{
+  header ul {
     max-width: 600px;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
 
-  
+
 }
 
-.container{
-  padding:1rem;
+.container {
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -123,21 +125,21 @@ header{
 
 /* section */
 
-  .content-container{
-    display: flex;
-    flex-direction: column;
-  }
-  
+.content-container {
+  display: flex;
+  flex-direction: column;
+}
 
-section{
+
+section {
   background-color: #fff;
-  border:1px solid #e6e0d3;
-  border-radius:5px;
+  border: 1px solid #e6e0d3;
+  border-radius: 5px;
   padding: 1rem;
-   display: flex;
+  display: flex;
   flex-direction: column;
   margin-top: 20px;
-  
+
 }
 
 h2::before {
@@ -145,50 +147,66 @@ h2::before {
   color: hsl(45, 90%, 50%);
 }
 
-section img{
-  border-radius:50%;
-  border:5px solid hsl(45, 90%, 50%);
+section img {
+  border-radius: 50%;
+  border: 5px solid hsl(45, 90%, 50%);
   height: auto;
   width: 100%;
 }
 
-.img-container{
+.img-container {
   max-width: 30%;
   align-self: center;
   margin-right: 10px;
 }
 
-#back-top{
-  display:inline-block;
-  text-decoration:none;
-  background-color:#1f3d7a;
-  color:white;
-  font-size:3rem;
-  width:60px;
-  height:60px;
-  position:fixed;
+.img-container img {
+  transition: transform 300ms ease;
+}
+
+#back-top {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #1f3d7a;
+  color: white;
+  font-size: 3rem;
+  width: 60px;
+  height: 60px;
+  position: fixed;
   right: 10px;
   bottom: 30px;
-  text-align:center;
-  border-radius:50%;
+  text-align: center;
+  border-radius: 50%;
   z-index: 20000;
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(34, 76, 161, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(34, 76, 161, 0);
+  }
 }
 
 @media screen and (min-width:577px) {
-  .img-container{
+  .img-container {
     align-self: auto;
   }
 
-  .first-sect-container{
+  .first-sect-container {
     flex-direction: row;
   }
-  
-  
+
+
 }
 
 
 
-.skill-container{
+.skill-container {
   display: flex;
   gap: 10px;
   width: 80%;
@@ -197,59 +215,79 @@ section img{
 
 }
 
-.chips{
+.chips {
   text-align: center;
-  border:none;
+  border: none;
   padding: 10px;
   border-radius: 30px;
   background-color: #1f3d7a;
-  /* flex-grow: 1; */
+  transition: transform 150ms ease, background-color 150ms ease;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.skill-container
-.chips:first-child{
+.skill-container .chips:first-child {
   background-color: hsl(45, 90%, 50%);
   color: #1f3d7a;
 }
 
-.content-container table{
+.content-container table {
   width: 100%;
-  overflow: hidden;
+
   border: 1px solid #e6e0d3;
 }
 
-.content-container table th{
+.content-container table th {
   background-color: #2b2b2b;
   color: #e6e0d3;
 }
 
-.content-container table tbody{
-text-align: center;
+.content-container table tbody {
+  text-align: center;
 }
 
 /* progetti */
 
-#progetti .card{
+#progetti .card {
   position: relative;
 }
 
-#progetti .content-container .card-container .card:first-of-type h3::after {
+#pagina-ricetta {
+  transition: transform ease-out 0.15s, box-shadow ease-out 0.2s;
+}
+
+.card-container .card:first-of-type h3::after {
   content: '🆕';
   font-size: 2rem;
   position: absolute;
   top: 0;
   right: 0;
+  animation: pulse-badge 2s ease-in-out infinite;
+  transform-origin: top right;
+}
+
+@keyframes pulse-badge {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
 }
 
 @media screen and (min-width:577px) {
-  .card-container{
-  display: flex;
-  gap: 20px;
+  .card-container {
+    display: flex;
+    gap: 20px;
   }
-  
+
 }
+
 /* 
 contatti */
 
@@ -289,13 +327,14 @@ contatti */
 }
 
 @media screen and (min-width:577px) {
+
   .contatti form select,
   .contatti form input,
   .contatti form textarea {
     width: 60%;
   }
 
-  .contatti button{
+  .contatti button {
     width: 30%;
   }
 
@@ -308,9 +347,10 @@ contatti */
 
 
 }
+
 /* finestra modale */
 
-.overlay{
+.overlay {
   display: none;
   position: fixed;
   inset: 0;
@@ -319,12 +359,12 @@ contatti */
 
 }
 
-.modal{
+.modal {
   position: absolute;
   width: 100%;
-  top: 70%;
-  left:50%;
-  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 2em;
   border-radius: 10px;
@@ -334,10 +374,42 @@ contatti */
 
 }
 
-#closeModalBtn{
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+.overlay:not([hidden]) {
+  animation: overlay-in ease-out 0.2s;
+}
+
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%)
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.overlay:not([hidden]) .modal {
+  animation: modal-in 200ms ease-in-out backwards;
+}
+
+#closeModalBtn {
   position: absolute;
   top: 20px;
-  right:10px;
+  right: 10px;
   color: #fff;
   cursor: pointer;
   width: 30px;
@@ -353,39 +425,64 @@ footer {
   flex-direction: column;
   height: 15dvh;
   align-items: center;
-   background-color: hsl(220, 40%, 15%);
+  background-color: hsl(220, 40%, 15%);
 }
-/* header nav ul li a,
-.icon-container a{
-  padding: 10px;
-} */
 
-footer i{
-  margin-top:20px;
+
+footer i {
+  margin-top: 20px;
   font-size: 1.5rem;
   padding: 10px;
   border-radius: 50%;
-  
+
 }
 
 /* effetti */
 
 
-#closeModalBtn:hover{
+#closeModalBtn:hover {
   background-color: red;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+nav ul li:hover {
+  transform: scale(1.1);
 }
 
 nav ul li a:hover {
   color: hsl(220, 60%, 20%);
   background-color: hsl(45, 90%, 60%);
+  transform: scale(1.2);
 }
+
+.img-container img:hover {
+  transform: scale(1.05) rotate(-2deg);
+
+}
+
 .contatti .content-container button:hover,
 .contatti .content-container form button:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
   background-color: hsl(220, 60%, 45%);
 
 }
+
+#pagina-ricetta:hover,
+#pagina-ricetta:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#back-top:hover {
+  transform: scale(1.08);
+}
+
+
+.chips:hover {
+  transform: translateY(-2px);
+  background-color: hsl(220, 60%, 40%);
+}
+
 
 
 footer i:hover {
